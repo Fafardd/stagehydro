@@ -15,7 +15,6 @@
 
 #monStageImg{
     position: absolute;
-    /*z-index: -1;*/
     top: 0;
     bottom: 25%;
     left: 30%;
@@ -45,12 +44,8 @@
     background-color: rgb(138, 178, 242);
 }
 
-#exempleModifCSS{
-    cursor:pointer;
-}
-
-.pointer{
-    cursor:pointer;
+#exempleModifCSS, .pointer, a, .textPourPopup{
+    cursor:pointer!important;
 }
 
 .texteTitre{
@@ -71,11 +66,11 @@ p{
 .textPourPopup{
     color:blue!important;
     text-decoration: underline!important;
-    cursor:pointer!important;
 }
 
 .hover_img a { 
-    position:relative; cursor:default 
+    position:relative; 
+    cursor:default 
 }
 .hover_img a span { 
     position: absolute; 
@@ -109,16 +104,13 @@ p{
 }
 
 .tableSelecteur th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: rgb(75, 142, 230);
-  color: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(75, 142, 230);
+    color: white;
 }
 
-a{
-    cursor: pointer;
-}
 
 .navbarHauteur{
     height: 60px;
@@ -168,48 +160,41 @@ footer{
     animation: fa-spin 0.75s infinite linear reverse!important;
 }
 
-/*.fa-spin-reverse {
-    -moz-animation: spin 2s infinite linear reverse!important;
-    -o-animation: spin 2s infinite linear reverse!important;
-    -webkit-animation: spin 2s infinite linear reverse!important;
-    animation: spin 2s infinite linear reverse!important;
-  }*/
 
-  .carousel-inner{
-    /*border: 30px solid black;
-    border-radius: 25px;*/
+.carousel-inner{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 5px;
-  }
+}
 
-  .fitInPage{
-      width:90%;
-      display:inline-block;
-  }
+.fitInPage{
+    width:90%;
+    display:inline-block;
+}
 
-  .mesModals{
+.mesModals{
     max-width: inherit!important;
     margin-top: 0px!important;
     overflow: hidden!important;
-  }
+}
 
-  .pleineHauteur{
-      height: 100%!important;
-  }
+.pleineHauteur{
+    height: 100%!important;
+}
 
-  .modal{
+.modal{
     overflow:hidden!important;
     padding: 0!important;
-  }
+}
 
-  .alert{
-      padding: .1rem 1.25rem!important;
-  }
+.alert{
+    padding: .1rem 1.25rem!important;
+}
 
-  .imagesTitre{
-      width:60px!important;
-  }
+.imagesTitre{
+    width:60px!important;
+}
 
-  .imagesStages{
+.imagesStages{
     cursor: zoom-in;
-  }
+}
+  

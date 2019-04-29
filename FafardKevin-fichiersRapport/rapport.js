@@ -9,24 +9,6 @@ $(document).ready(function(){
     $("#collapseTwo").addClass("couleurBleu");
   });
 });
-/*
-$.ajax({
-  url:"index.php?r=LDC/default/afficher-details-message",
-  dataType:'json',
-  method:'post',
-  data: {
-      id:idGrid
-  }
-}).done( function(json) {
-  ldcFenetreDetailsMessage(json);
-});
-*/
-
-$(document).ready(function(){
-  
-  var monElementJQuery = $("#monId");
-
-});
 
 $(document).ready(function(){
 
@@ -49,7 +31,7 @@ $(document).ready(function(){
         },1250, 'swing');
       }
     });
-});
+  });
 
 
 
@@ -93,7 +75,6 @@ $(document).ready(function(){
 
     if($(this).text() == "Afficher toutes les méthodes de manipulations de dimensions"){
 
-      //$(this ).fadeTo( "fast", 1 );
       $(this).text("Cacher toutes les méthodes de manipulations de dimensions");
       
       $("#tableMDimensions").show("slow");
@@ -116,7 +97,6 @@ $(document).ready(function(){
 
     if($(this).text() == "Afficher les sélecteurs"){
 
-      //$(this ).fadeTo( "fast", 1 );
       $(this).text("Cacher les sélecteurs");
       
       $("#tableSelecteurs").show("slow");
@@ -135,8 +115,7 @@ $(document).ready(function(){
   $("#afficherManipulationsDom").click(function(){
 
     if($(this).text() == "Afficher toutes les manipulations possibles"){
-
-      //$(this ).fadeTo( "fast", 1 );
+;
       $(this).text("Cacher toutes les manipulations possibles");
       
       $("#tableManipDom").show("slow");
@@ -156,7 +135,6 @@ $(document).ready(function(){
 
     if($(this).text() == "Afficher toutes les méthodes de parcours"){
 
-      //$(this ).fadeTo( "fast", 1 );
       $(this).text("Cacher toutes les méthodes de parcours");
       
       $("#tableTraversing").show("slow");
@@ -176,8 +154,7 @@ $(document).ready(function(){
   $("#afficherMethCSS").click(function(){
 
     if($(this).text() == "Afficher toutes les méthodes CSS"){
-
-      //$(this ).fadeTo( "fast", 1 );
+;
       $(this).text("Cacher toutes les méthodes CSS");
       
       $("#tableCSS").show("slow");
@@ -198,7 +175,6 @@ $(document).ready(function(){
 
     if($(this).text() == "Afficher toutes les méthodes d'attributs"){
 
-      //$(this ).fadeTo( "fast", 1 );
       $(this).text("Cacher toutes les méthodes d'attributs");
       
       $("#tableAtt").show("slow");
@@ -268,42 +244,11 @@ $(document).ready(function(){
     },750);
   });
 
-  //exemple inutile
-
   $('#monDiv').children().each(function (index) {
     alert('Index: ' + index + ', html: ' + $(this).html());
   });
 
   $("button, img").parent("p").css("text-align", "center");
-
-  /*$.ajax({
-    url:"urlVersNotreController",
-    dataType:'xml',
-    method:'post',
-    data:{
-      premiereDonnee: idUn,
-      deuxuiemeDonne: idDeux
-    }
-  })
-  .done(function(xml) {
-    alert( "success" + xml);
-  })
-  .fail(function() {
-    alert( "error" );
-  })
-  .always(function() {
-    alert( "complete" );
-  });*/
-
-  /*$("#ldc1").click(function(){
-    $('#modalLdc1').modal('toggle');
-    $('#modalLdc1').modal('toggle');
-  });
-
-  $('#modalLdc1').click(function(){
-    $('#modalLdc1').modal('dispose');
-  });*/
-
 
 });
 
