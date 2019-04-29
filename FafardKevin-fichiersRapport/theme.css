@@ -209,3 +209,7 @@ footer{
   .imagesTitre{
       width:60px!important;
   }
+
+  .imagesStages{
+    cursor: zoom-in;
+  }
