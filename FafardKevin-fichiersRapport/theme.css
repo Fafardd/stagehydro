@@ -1,0 +1,211 @@
+#bleu{
+    background-color: blue;
+}
+#options{
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+}
+#title{
+    color:white;
+    background:url(img/bg-intro.jpg);
+    margin-top: 75px!important;
+    background-color: white!important;
+}
+
+#monStageImg{
+    position: absolute;
+    /*z-index: -1;*/
+    top: 0;
+    bottom: 25%;
+    left: 30%;
+    right: 25%;
+    
+    opacity: .4;
+    width: 40%;
+    height: 100%;
+}
+
+#exemples{
+    background-color: white!important;
+    display: inline-flex;
+}
+
+.exemple{
+    margin:10px;
+}
+
+.titreNav{
+    position: absolute;
+    right: 15px;
+}
+
+.couleurBleu{
+    transition: background-color 0.4s ease;
+    background-color: rgb(138, 178, 242);
+}
+
+#exempleModifCSS{
+    cursor:pointer;
+}
+
+.pointer{
+    cursor:pointer;
+}
+
+.texteTitre{
+    padding-bottom: 150px;
+    padding-top: 20px;
+    margin-top: 140px;
+}
+
+p{
+    text-align: justify;
+}
+
+.lead, .btn, body{
+    text-align: center!important;
+}
+
+
+.textPourPopup{
+    color:blue!important;
+    text-decoration: underline!important;
+    cursor:pointer!important;
+}
+
+.hover_img a { 
+    position:relative; cursor:default 
+}
+.hover_img a span { 
+    position: absolute; 
+    display:none; 
+    z-index:15000; 
+}
+.hover_img a:hover span { 
+    display:contents; 
+    text-align: center;
+}
+
+.texteBlanc{
+    color:white!important;
+}
+
+.tableSelecteur{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    display: block;
+    text-align: -webkit-center;
+}
+
+.tableSelecteur td, .tableSelecteur th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+.tableSelecteur tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.tableSelecteur th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgb(75, 142, 230);
+  color: white;
+}
+
+a{
+    cursor: pointer;
+}
+
+.navbarHauteur{
+    height: 60px;
+}
+table{
+    text-align:center;
+}
+
+#contenuPrincipal{
+    font-size: 18pt;
+    padding-right: 8%;
+    padding-left: 8%;
+}
+
+.methodes{
+    margin-bottom: 4%;
+}
+
+.marginsTopBot{
+    margin-bottom: 8%;
+    margin-top: 8%;
+}
+
+#exempleOn {
+    border-radius: 25px;
+    background: black;
+    padding: 20px; 
+    width: 100%;
+    height: 75px;  
+}
+
+h3{
+    margin-bottom: 17px!important;
+}
+
+footer{
+    text-align: left;
+    background-color: #343a40!important;
+    color:white;
+}
+
+.fa-spin {
+    animation: fa-spin 0.75s infinite linear !important;
+}
+
+.reverse{
+    animation: fa-spin 0.75s infinite linear reverse!important;
+}
+
+/*.fa-spin-reverse {
+    -moz-animation: spin 2s infinite linear reverse!important;
+    -o-animation: spin 2s infinite linear reverse!important;
+    -webkit-animation: spin 2s infinite linear reverse!important;
+    animation: spin 2s infinite linear reverse!important;
+  }*/
+
+  .carousel-inner{
+    /*border: 30px solid black;
+    border-radius: 25px;*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 5px;
+  }
+
+  .fitInPage{
+      width:90%;
+      display:inline-block;
+  }
+
+  .mesModals{
+    max-width: inherit!important;
+    margin-top: 0px!important;
+    overflow: hidden!important;
+  }
+
+  .pleineHauteur{
+      height: 100%!important;
+  }
+
+  .modal{
+    overflow:hidden!important;
+    padding: 0!important;
+  }
+
+  .alert{
+      padding: .1rem 1.25rem!important;
+  }
+
+  .imagesTitre{
+      width:60px!important;
+  }

@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Kevin Fafard - jQuery</title>
+        <link href="FafardKevin-fichiersRapport/img/jquery.png" rel="icon">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="FafardKevin-fichiersRapport/rapport.js"></script>
+        <link rel="stylesheet" type="text/css" href="FafardKevin-fichiersRapport/theme.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" >
+    </head>
+    <body>
+            <header>
+              <nav class="navbar navbar-expand-lg fixed-top navbar-dark  bg-dark ">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#monStageText">Mon stage</a>
+                    </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#histoire">Qu'est-ce que jQuery</a>
+                    </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#lesSelectors">La syntaxe et les sélecteurs</a>
+                    </li>
+                    <li class="nav-item active dropdown">
+                      <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Les méthodes de jQuery</a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="#manipDom">Les manipulations DOM</a>
+                          <a class="dropdown-item" href="#traversingMeth">Les méthodes de parcours</a>
+                          <a class="dropdown-item" href="#methCSS">Les méthodes CSS</a>
+                          <a class="dropdown-item" href="#methAttributs">Les méthodes d'attributs</a>
+                          <a class="dropdown-item" href="#methEvents">Les événements</a>
+                          <a class="dropdown-item" href="#methAnimations">Les animations</a>
+                          <a class="dropdown-item" href="#methDimensions">Les manipulations de dimensions</a>
+                          <a class="dropdown-item" href="#reqAjax">Les requêtes Ajax</a>
+                      </div>
+                    </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#durantStage">Utilisation concrète</a>
+                    </li>
+                    <li class="nav-item active dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown2" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mes projets</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <a class="dropdown-item" href="#titreHDT">Horaire de Travail</a>
+                            <a class="dropdown-item" href="#titreLDC">Liste des Changements</a>
+                            <a class="dropdown-item" href="#titreLDI">Liste des Incidents</a>
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#conclu">Conclusion</a>
+                    </li>
+                </ul>
+                <span class="navbar-text titreNav">
+                  Kevin Fafard - jQuery
+                </span>
+                
+            </nav>
+            </header>
+            <div id="title" class="position-relative overflow-hidden p-3 p-md-1 m-md-3 text-center bg-secondary ">
+                    <div class="texteTitre">
+                      <h1 class="display-4 font-weight-normal">jQuery</h1>
+                      <p class="lead font-weight-normal">Plus complet, plus simplement</p>
+                      <a class="lead font-weight-bold">Par Kevin Fafard</a>
+                    </div>
+                    <!--<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                          </ol>
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="FafardKevin-fichiersRapport/img/bg-intro.jpg" class="d-block w-100" alt="...">
+                          <div class="carousel-caption d-none d-md-block">
+                              <h5>First slide label</h5>
+                              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                          <img src="FafardKevin-fichiersRapport/img/Hydro-Québec_logo.png" class="d-block w-100" alt="...">
+                          <div class="carousel-caption d-none d-md-block">
+                              <h5>First slide label</h5>
+                              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            </div>
+                        </div>
+                      </div>
+                      <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </div>-->
+            </div>
+            <span id="navMonStage"></span>
+            <div id="contenuPrincipal" class="m-md-3 border border-light bg-light ">
+
+                <div id="monStage" class="m-md-5 marginsTopBot">
+                  
+                  <div id="monStageText">
+                    <h1>
+                      Mon stage chez Hydro-Québec 
+                      <img class="imagesTitre" src="FafardKevin-fichiersRapport/img/HqLogo.png"/>
+                    </h1>
+                    <p>
+                        Durant le début de l'année 2019, pour ma session d'hiver au Collège Montmorency, j'ai effectué un stage chez Hydro-Québec en programmation web. 
+                        Nous avions le mandat de développer différentes applications afin de faciliter les opérations courantes. Par exemple, nous avons développé une 
+                        interface permettant de générer un horaire pour l'équipe de travail ainsi que de gérer les congés, le temps supplémentaire et les indisponibilités. Un autre 
+                        exemple est le développement d'une interface permettant aux employés de soutien de consulter les tâches sur les serveurs en temps réel. Nous 
+                        avons utilisé majoritairement les langages JavaScript et PHP. La librairie que nous avons le plus utilisé se nomme <b>DHTMLX</b>. Elle permet de générer des
+                        interfaces et des éléments graphiques extrêmement rapidement grâce à très peu de code JavaScript. Cependant, nous avons également touché énormément au HTML, CSS et jQuery, pour
+                        <span id="navJQuery"></span> 
+                        lequel j'ai développé un réel intérêt. Je tiens donc à vous le présenter.
+                     </p>
+                  </div>
+                </div><!--Fin monStage-->
+                <div id="histoire" class="pb-3 text-center m-md-5 marginsTopBot">
+                  <h1>
+                    Qu'est-ce que jQuery
+                    <img class="imagesTitre" src="FafardKevin-fichiersRapport/img/jquery.png"/>
+                  </h1>
+                  <p class="text-justify m-md-3">Premièrement, jQuery est une librairie JavaScript open source qui a été créé en 2006 par John Resig. 
+                    Le but de cette librairie est de venir complémenter le HTML et le CSS des pages internet. Il s'agit donc d’une des librairies les plus 
+                    utilisées à ce jour. La plus grande utilité de jQuery est de rendre une page web plus interactive. Elle permet également de manipuler la 
+                    page web, d'obtenir des données d’un serveur, de gérer les différents événements clients ainsi que de créer des effets et des animations sur des 
+                    éléments. Avant de commencer, voici quelques exemples de ce que jQuery permet de faire:</p>
+                  <div id="options">
+                      
+                      <div class="accordion" id="accordionExample">
+                        
+                        <div class="card">
+                          
+                          <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" 
+                                aria-expanded="true" aria-controls="collapseOne">
+                                  Ajouter, modifier et supprimer des éléments HTML d'une page web
+                              </button>
+                            </h2>
+                          </div>
+            
+                          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body">
+                              <div>
+                                <p id="exempleModifHtml" class="pointer">Appuyez sur le texte pour le faire changer grâce à du jQuery</p>
+                                <img src="FafardKevin-fichiersRapport/img/exempleHTML.png" style="width:90%;"/>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                                
+                        
+                        <div class="card">
+
+                          <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" 
+                              aria-expanded="false" aria-controls="collapseTwo">
+                                Ajouter, modifier ou supprimer le CSS d'un élément
+                              </button>
+                            </h2>
+                          </div>
+
+                          <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                            <div class="card-body pointer">
+                                    <p>Cliquez ici pour rendre le tout en bleu.</p>
+                                    <img src="FafardKevin-fichiersRapport/img/exempleCSS.PNG" style="width:90%;"/>
+                            </div>
+                          </div>
+
+                        </div>
+                                
+                                
+                        <div class="card">
+                          <div class="card-header" id="headingThree">
+                            <h2 class="mb-0">
+                              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" 
+                              aria-expanded="true" aria-controls="collapseThree">
+                                Effectuer des requêtes grâce au serveur à l'aide de requêtes Ajax
+                              </button>
+                            </h2>
+                          </div>
+                          <div id="collapseThree" class="collapse multi-show show" aria-labelledby="headingThree" data-parent="#accordionExample">
+                            <div class="card-body">
+                              <p id="test">
+                                Voici un exemple d'une requête ajax effectué avec jQuery.
+                              </p>
+                              <img src="FafardKevin-fichiersRapport/img/exempleAjax.PNG" style="width:90%;"/>
+                            </div>
+                          </div>
+                        </div>
+
+
+                      </div><!--Fin accordeon-->
+                  </div><!--Fin options-->
+
+                  <div id="avantages" class="m-md-5 marginsTopBot">
+                    <h1 style="margin-bottom: 2%;">
+                      Les avantages de jQuery
+                    </h1>
+                    <div id="listeAvantages"  style="text-align: initial; display: inline-block;">
+                      <ul>
+                        <li>jQuery est rapide et polyvalent</li>
+
+                        <li>La librairie jQuery est facile à apprendre, surtout si vous êtes familier et à 
+                          l’aise avec le langage JavaScript puisqu’il s’agit du même style de programmation</li>
+
+                        <li>jQuery permet de faire davantage avec moins de code. La librairie vient simplifier des actions plus complexes.</li>
+
+                        <li>La documentions fournie est simple, efficace et facile à comprendre</li>
+
+                        <li>jQuery permet de rendre les sites plus dynamiques et plus intéressants pour les utilisateurs</li>
+                      </ul>
+                    </div>
+                  </div>
+                    
+                </div> <!--Fin histoire-->
+
+                <div id="debuter" class="m-md-5 marginsTopBot">
+                    <h1 class="text-center">Débuter avec jQuery</h1>
+                    <p>
+                      La première étape pour utiliser la librairie est de lier le script dans notre balise head. Vous pouvez autant  
+                      <a href="https://jquery.com/download/" target="_blank">télécharger le fichier du site de jQuery</a> que mettre son lien direct:
+                      <img src="FafardKevin-fichiersRapport/img/relierJquery.PNG" style="width:90%;"/><br />
+                      À noter, pour le mettre en lien comme ceci, il faut qu'il soit inclus dans le réseau de diffusion du contenu, ou le Content Delivery 
+                      Network, comme Google ou Microsoft. De plus, la librairie jQuery n'est pas support.e par tous les navigateurs web. En effet, plusieurs anciennes 
+                      versions de Firefox et d'Internet Explorer ne supportent pas cette librairie. Maintenant que jQuery est inclus dans nos scripts, nous
+                      <span id="navSelectors"></span> 
+                      sommes prêts à l'utiliser!
+                    </p>
+                </div><!--Fin debuter-->
+
+                <div id="lesSelectors" class="m-md-5">
+                    <h1 class="text-center">La syntaxe et les sélecteurs</h1>
+                    <p>
+                      Il est important de comprendre que jQuery agit sur les éléments HTML de la page web. 
+                      Il faut donc sélectionner les éléments à l'aide d'une requête ressemblant à 
+                       <b>$();</b>, pour ensuite y performer une action. Ce symbole est simplifié et représente en fait 
+                        <b>jQuery()</b>. Il est d'ailleurs important d'effectuer la commande (vous pouvez appuyer sur le code afin de mieux le voir):
+                      <div class="hover_img">
+                      <a id="jqueryHover" class="textPourPopup">
+                          <div id="imgDocReady">
+                              <img src="FafardKevin-fichiersRapport/img/jqueryDocReady.PNG"/>
+                          </div>
+                          <br />
+                        <b id="docReadyPopup" class="textPourPopup">
+                          $( document ).ready( function(){ //Votre méthode jQuery } );
+                        </b>
+                        
+                      </a>
+                        
+                      </div>
+                      <br />
+                      Ce code permet de s'assurer que tout le document est bien chargé avant d'effectuer nos manipulations. On peut également 
+                      écrire uniquement <b>$(function(){});</b> pour vérifier que tout le document est chargé. On fait cela afin de ne pas avoir
+                       d'erreurs entre autres lorsque nous tentons de montrer ou cacher un élément qui n'est toujours pas chargé. On voit du même coup 
+                       la base de la syntaxe utilisée.  <b>$( document )</b> correspond à l'élément, <b>.ready()</b> correspond à notre fonction. Donc on obtient toujours
+                      quelque chose semblable à $(notre sélecteur).notreAction(). On le voit bien dans <a href="#accordionExample">les exemples plus hauts.</a>
+                      Comme mentionné plus tôt, jQuery se base directement sur les éléments du HTML, donc les sélecteurs sont aussi majoritairement des 
+                      éléments qu'on retrouve dans la page puisque ceux-ci se base sur les sélecteurs utilisés en CSS. 
+                    </p>
+                    <button type="button" class="btn btn-outline-primary mb-2" id="afficherSelecteur">Afficher les sélecteurs</button>
+                    <div id="tableSelecteurs" class="tableSelecteur m-3">
+                      <table>
+                        <tbody>
+                          <tr>
+                          <th style="width:20%">Les sélecteurs</th>
+                          <th style="width:25%">Exemple</th>
+                          <th>Élément sélectionné</th>
+                          </tr>
+                          <tr>
+                            <td>*</td>
+                            <td>$("*")</td>
+                            <td>Tous les éléments</td>
+                          </tr>
+                          <tr>
+                            <td>#<em>id</em></td>
+                            <td>$("#idPrecis")</td>
+                            <td>Élément ayant id="idPrecis"</td>
+                          </tr>
+                          <tr>
+                          <td>.<em>class</em></td>
+                          <td>$(".classePrecise")</td>
+                          <td>Tous les éléments avec la class="classePrecise"</td>
+                          </tr>
+                          <tr>
+                          <td>.<em>class,</em>.<em>class</em></td>
+                          <td>$(".classe1,.classe2")</td>
+                          <td>Tous les éléments avec les classes "classe1" or "classe2"</td>
+                          </tr>
+                          <tr>
+                          <td><em>element</em></td>
+                          <td>$("p")</td>
+                          <td>Tous les éléments &lt;p&gt;</td>
+                          </tr>
+                          <tr>
+                          <td><em>el1</em>,<em>el2</em>,<em>el3</em></td>
+                          <td>$("h1,div,p")</td>
+                          <td>Tous les éléments &lt;h1&gt;, &lt;div&gt; and &lt;p&gt;</td>
+                          </tr>
+                          <tr>
+                          <td>:first</td>
+                          <td>$("p:first")</td>
+                          <td>Le premier élément &lt;p&gt;</td>
+                          </tr>
+                          <tr>
+                          <td>:last</td>
+                          <td>$("p:last")</td>
+                          <td>Le dernier élément &lt;p&gt;</td>
+                          </tr>
+                          <tr>
+                          <td>:even</td>
+                          <td>$("tr:even")</td>
+                          <td>Tous les éléments &lt;tr&gt; even (1 sur 2)</td>
+                          </tr>
+                          <tr>
+                          <td>:odd</td>
+                          <td>$("tr:odd")</td>
+                          <td>Tous les éléments &lt;tr&gt; odd (1 sur 2)</td>
+                          </tr>
+                          <tr>
+                          <td>:first-child</td>
+                          <td>$("p:first-child")</td>
+                          <td>Tous les éléments &lt;p&gt; qui sont le premier enfant de leur parent</td>
+                          </tr>
+                          <tr>
+                          <td>:first-of-type</td>
+                          <td>$("p:first-of-type")</td>
+                          <td>Tous les éléments &lt;p&gt; qui sont les premiers éléments &lt;p&gt; de leur parent</td>
+                          </tr>
+                          <tr>
+                          <td>:last-child</td>
+                          <td>$("p:last-child")</td>
+                          <td>Tous les éléments &lt;p&gt; qui sont le dernier enfant de leur parent</td>
+                          </tr>
+                          <tr>
+                          <td>:last-of-type</td>
+                          <td>$("p:last-of-type")</td>
+                          <td>Tous les éléments &lt;p&gt; qui sont le dernier &lt;p&gt; de leur parent</td>
+                          </tr>
+                          <tr>
+                          <td>:nth-child(<em>n</em>)</td>
+                          <td>$("p:nth-child(2)")</td>
+                          <td>Tous les éléments &lt;p&gt; qui sont le 2e enfant de leur parent</td>
+                          </tr>
+                          <tr>
+                          <td>:nth-last-child(<em>n</em>)</td>
+                          <td>$("p:nth-last-child(2)")</td>
+                          <td>Tous les éléments &lt;p&gt; qui sont le 2e enfant de leur parent, commençant par la fin</td>
+                          </tr>
+                          <tr>
+                          <td>:nth-of-type(<em>n</em>)</td>
+                          <td>$("p:nth-of-type(2)")</td>
+                          <td>Tous les éléments &lt;p&gt; qui sont le 2e élément &lt;p&gt; de leur parent</td>
+                          </tr>
+                          <tr>
+                          <td>:nth-last-of-type(<em>n</em>)</td>
+                          <td>$("p:nth-last-of-type(2)")</td>
+                          <td>Tous les éléments &lt;p&gt; qui sont le 2e élément &lt;p&gt; de leur parent, commançent par la fin</td>
+                          </tr>
+                          <tr>
+                          <td>>:only-child</td>
+                          <td>$("p:only-child")</td>
+                          <td>Tous les éléments &lt;p&gt; qui sont le seul enfant de leur parent</td>
+                          </tr>
+                          <tr>
+                          <td>:only-of-type</td>
+                          <td>$("p:only-of-type")</td>
+                          <td>Tous les éléments &lt;p&gt; qui sont le seul enfant de ce type de leur parent</td>
+                          </tr>
+                          <tr>
+                          <td>parent &gt; child</td>
+                          <td>$("div &gt; p")</td>
+                          <td>Tous les éléments &lt;p&gt; qui sont un enfant direct d'un élément &lt;div&gt;</td>
+                          </tr>
+                          <tr>
+                          <td>parent descendant</td>
+                          <td>$("div p")</td>
+                          <td>Tous les éléments &lt;p&gt; qui sont descendants d'un élément &lt;div&gt;</td>
+                          </tr>
+                          <tr>
+                          <td>element + next</td>
+                          <td>$("div + p")</td>
+                          <td>L'élément &lt;p&gt; qui est directement après chaque éléments &lt;div&gt;</td>
+                          </tr>
+                          <tr>
+                          <td>element ~ siblings</td>
+                          <td>$("div ~ p")</td>
+                          <td>Tous les éléments &lt;p&gt; qui sont siblings d'un élément &lt;div&gt;</td>
+                          </tr>
+                          <tr>
+                          <td>:eq(<em>index</em>)</td>
+                          <td>$("ul li:eq(3)")</td>
+                          <td>Le quatrième élément d'une liste</td>
+                          </tr>
+                          <tr>
+                          <td>:gt(<em>no</em>)</td>
+                          <td>$("ul li:gt(3)")</td>
+                          <td>Les éléments d'une liste dont l'index est plus grand que 3</td>
+                          </tr>
+                          <tr>
+                          <td>:lt(<em>no</em>)</td>
+                          <td>$("ul li:lt(3)")</td>
+                          <td>Les éléments d'une liste dont l'index est inférieur à 3</td>
+                          </tr>
+                          <tr>
+                          <td>:not(<em>selector</em>)</td>
+                          <td>$("input:not(:empty)")</td>
+                          <td>Tous les input qui ne sont pas vide</td>
+                          </tr>
+                          <tr>
+                          <td>:header</td>
+                          <td>$(":header")</td>
+                          <td>Tous les éléments header &lt;h1&gt;, &lt;h2&gt; ...</td>
+                          </tr>
+                          <tr>
+                          <td>:animated</td>
+                          <td>$(":animated")</td>
+                          <td>Tous les éléments animés</td>
+                          </tr>
+                          <tr>
+                          <td>:focus</td>
+                          <td>$(":focus")</td>
+                          <td>Tous les éléments qui sont focus</td>
+                          </tr>
+                          <tr>
+                          <td>:contains(<em>text</em>)</td>
+                          <td>$(":contains('Bonjour')")</td>
+                          <td>Tous les éléments qui contiennent le text "Bonjour"</td>
+                          </tr>
+                          <tr>
+                          <td>:has(<em>selector</em>)</td>
+                          <td>$("div:has(p)")</td>
+                          <td>Tous les éléments &lt;div&gt; qui ont un élément &lt;p&gt;</td>
+                          </tr>
+                          <tr>
+                            <td>:empty</td>
+                            <td>$(":empty")</td>
+                            <td>Tous les éléments qui ne sont pas vide</td>
+                          </tr>
+                          <tr>
+                            <td>:parent</td>
+                            <td>$(":parent")</td>
+                            <td>Tous les éléments qui sont parent d'un autre élément</td>
+                          </tr>
+                          <tr>
+                            <td>:hidden</td>
+                            <td>$("p:hidden")</td>
+                            <td>Tous les éléments &lt;p&gt; cachés</td>
+                            </tr>
+                          <tr>
+                          <td>:visible</td>
+                          <td>$("table:visible")</td>
+                          <td>Tous les tables visibles</td>
+                          </tr>
+                          <tr>
+                            <td>:root</td>
+                            <td>$(":root")</td>
+                            <td>L'élément root (racine) du document</td>
+                          </tr>
+                          <tr>
+                            <td>:lang(<em>language</em>)</td>
+                            <td>$("p:lang(de)")</td>
+                            <td>Tous les éléments &lt;p&gt; avec un lang attribute commençant par "de"</td>
+                          </tr>
+                          <tr>
+                            <td>[<em>attribute</em>]/td>
+                            <td>$("[href]")</td>
+                            <td>Tous les éléments avec un attribut href</td>
+                          </tr>
+                          <tr>
+                            <td>[<em>attribute</em>=<em>value</em>]</td>
+                            <td>$("[href='default.htm']")</td>
+                            <td>Tous les éléments avec une valeur égale à "default.htm"</td>
+                          </tr>
+                          <tr>
+                            <td>[<em>attribute</em>!=<em>value</em>]</td>
+                            <td>$("[href!='default.htm']")</td>
+                            <td>Tous les éléments avec un href attribut différent de "default.htm"</td>
+                          </tr>
+                          <tr>
+                            <td>[<em>attribute</em>$=<em>value</em>]</td>
+                            <td>$("[href$='.jpg']")</td>
+                            <td>Tous les éléments avec un href attribute finissant par ".jpg"</td>
+                          </tr>
+                          <tr>
+                            <td>[<i>attribute</i>|=<i>value</i>]</td>
+                            <td>$("[title|='Tomorrow']")</td>
+                            <td>Tous les éléments avec un attribut tilte 'Tomorrow', ou commençant par 'Tomorrow' suivi d'un trait d'union</td>
+                          </tr>
+                          <tr>
+                            <td>[<i>attribute</i>^=<i>value</i>]</td>
+                            <td>$("[title^='Bon']")</td>
+                            <td>Tous les éléments avec un attribut title commençant par "Bon"</td>
+                          </tr>
+                          <tr>
+                            <td>[<i>attribute</i>~=<i>value</i>]</td>
+                            <td>$("[title~='bonjour']")</td>
+                            <td>Tous les éléments ayant comme attribut title contenant le mot spécifique "bonjour"</td>
+                          </tr>
+                          <tr>
+                            <td>[<i>attribute*</i>=<i>value</i>]</td>
+                            <td>$("[title*='bonjour']")</td>
+                            <td>Tous les éléments ayant comme attribut title attribute contenant le mot "bonjour"</td>
+                          </tr>
+                          <tr>
+                            <td>:input</td>
+                            <td>$(":input")</td>
+                            <td>Tous les éléments input</td>
+                          </tr>
+                          <tr>
+                            <td>:text</td>
+                            <td>$(":text")</td>
+                            <td>Tous les éléments input avec type="text"</td>
+                          </tr>
+                          <tr>
+                            <td>:password</td>
+                            <td>$(":password")</td>
+                            <td>Tous les éléments input avec type="password"</td>
+                          </tr>
+                          <tr>
+                            <td>:radio</td>
+                            <td>$(":radio")</td>
+                            <td>Tous les éléments input avec type="radio"</td>
+                          </tr>
+                          <tr>
+                            <td>:checkbox</td>
+                            <td>$(":checkbox")</td>
+                            <td>Tous les éléments input avec type="checkbox"</td>
+                          </tr>
+                          <tr>
+                            <td>:submit</td>
+                            <td>$(":submit")</td>
+                            <td>Tous les éléments input avec type="submit"</td>
+                          </tr>
+                          <tr>
+                            <td>:reset</td>
+                            <td>$(":reset")</td>
+                            <td>Tous les éléments input avec type="reset"</td>
+                          </tr>
+                          <tr>
+                            <td>:button</td>
+                            <td>$(":button")</td>
+                            <td>Tous les éléments input avec type="button"</td>
+                          </tr>
+                          <tr>
+                            <td>:image</td>
+                            <td>$(":image")</td>
+                            <td>Tous les éléments input avec type="image"</td>
+                          </tr>
+                          <tr>
+                            <td>:file</td>
+                            <td>$(":file")</td>
+                            <td>Tous les éléments input avec type="file"</td>
+                          </tr>
+                          <tr>
+                            <td>:enabled</td>
+                            <td>$(":enabled")</td>
+                            <td>Tous les éléments input</td>
+                          </tr>
+                          <tr>
+                            <td>:disabled</td>
+                            <td>$(":disabled")</td>
+                            <td>Tous les éléments input désactivés</td>
+                          </tr>
+                          <tr>
+                            <td>:selected</td>
+                            <td>$(":selected")</td>
+                            <td>Tous les éléments input sélectionnés</td>
+                          </tr>
+                          <tr>
+                            <td>:checked</td>
+                            <td>$(":checked")</td>
+                            <td>Tous les éléments cochés</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div><!--Fin de la table des sélecteurs-->
+                    
+                    <p>
+                      Les sélecteurs permettent donc de trouver ou de sélectionner un élément selon différents critères tels que leur <b>id</b>, leurs <b>classes</b>,
+                      leurs <b>attributs</b> ainsi que les valeurs de ceux-ci. Comme vu dans le tableau, un appel $('h1') sélectionnera tous les éléments h1, 
+                      $(‘.uneClasse’) sélectionnera les éléments ayant comme classe uneClasse ou encore $(‘#monID’) sélectionnera l’élément ayant comme id ‘monID’. 
+                      Après avoir sélectionné un élément, on peut ensuite le sauvegarder dans une variable grâce
+                      <a id="clickVariable" class="textPourPopup">aux variables non typées de JavaScript:</a>
+                    </p>
+                    <img id="imageVariable"src="FafardKevin-fichiersRapport/img/variableAvecJQuery.PNG"/>
+                    <p>
+                      Par exemple, dans l'action jQuery utilisée ici, notre élément appuyé correspond au texte souligné en bleu puisque son id (#id) est 
+                      définis. Puis, on performe notre action sur un deuxième élément de la page web.
+                    </p>
+                    <img id="imageVariable"src="FafardKevin-fichiersRapport/img/exmpleDeuxElements.PNG" class="methodes"/>
+                    <img id="imageVariable"src="FafardKevin-fichiersRapport/img/exempleDeuxElements2.PNG" class="methodes"/>
+                    <p>
+                      On retrouve donc les éléments dans notre JavaScript selon leur id dans ce cas, mais comme mentionné plus tôt, on peut utiliser des classes et bien
+                       d'autres sélecteurs. On peut également utiliser le sélecteur $(this) puisque JavaScript et jQuery sont heureusement orienté objet. De plus,
+                       le concept de parent, de frère et d'enfant est très important en jQuery. Lorsque nous appelons un élément HTML, tous ses éléments intérieurs
+                       seront considérés comme ses enfants. Les éléments de même niveau quant à eux, seront ses frères, tandis que les éléments qui l'englobent seront
+                       ses parents. <a id="clickExempleFamille" class="textPourPopup">Voici un exemple concret</a>. Portez attention aux id afin de bien comprendre
+                       chacun des membres de cette famille.<br />
+                       <img id="imgFamille" src="FafardKevin-fichiersRapport/img/exempleEnfant.PNG"/>
+                    </p>
+                    
+                </div> <!--Fin div sélecteurs-->
+
+                <div id="lesMethodes" class="marginsTopBot">
+                  <h1>Les méthodes de jQuery</h1>
+
+                    <div id="manipDom" class="methodes">
+                      <h3>
+                        Les manipulations DOM
+                        <img class="imagesTitre" src="FafardKevin-fichiersRapport/img/html.png"/>
+                      </h3>
+                        <p>
+                          Comme vous le savez déjà et avez pu le remarquer plus haut, les éléments DOM sont des éléments objets de notre page HTML représentés par une balise
+                          précise tel que <b>&lt;p&gt;</b>, <b>&lt;div&gt;</b>, <b>&lt;a&gt;</b>, <b>&lt;table&gt;</b>, etc. que nous pouvons sélectionner par l'entremise
+                          de la librairie jQuery. Les méthodes de manipulations DOM de la librairie permettent de mettre à jour la page HTML selon l'élément sélectionné. Par
+                          exemple, la méthode <b>remove()</b> vient retirer l'élément spécifié dans notre sélecteur au complet alors que la méthode <b>after()</b> vient ajouter
+                          un élément après le sélecteur. Ces méthodes viennent donc démontrer l'utilité de jQuery quant à la modification directe du contenu de la page.
+                        </p>
+                        <div id="exemples">
+                          <div id="exempleRemove" class="exemple">
+                            <h5>
+                              remove()
+                            </h5>
+                            <div>
+                              <h7>
+                                <b>Cliquez sur le premier texte afin de faire disparaître le second</b>
+                              </h7>
+                              <p id="premierTexte" class="textPourPopup">
+                                Ceci est un premier texte
+                              </p>
+                              <p id="deuxiemeTexte">
+                                Ceci est un deuxième texte
+                              </p>
+                              <p id="troisiemeTexte">
+                                Ceci est un troisième texte
+                              </p>
+                            </div>
+                          </div><!--div exempleRemove-->
+                          <div id="exempleAfter" class="exemple">
+                              <h5>
+                                after()
+                              </h5>
+                              <div>
+                                <h7>
+                                  <b>Cliquez sur le premier texte afin de faire apparaître le second</b>
+                                </h7>
+                                <p id="premierTexteAfter" class="textPourPopup">
+                                  Ceci est un premier texte
+                                </p>
+                              </div>
+                            </div><!--div exempleRemove-->
+                        </div><!--Div exemples-->
+                        <p><button type="button" class="btn btn-outline-primary mb-2" id="afficherManipulationsDom">Afficher toutes les manipulations possibles</button></p>
+                        <div id="tableManipDom" class="tableSelecteur m-3">
+                            <table>
+                              <tbody>
+                                  <tr>
+                                      <th style="width:25%">Méthode</th>
+                                      <th>Description</th>
+                                  </tr>
+                                  <tr>
+                                      <td>append()</td>
+                                      <td>Ajoute le contenu a la fin de l'élément spécifié par le sélecteur.</td>
+                                  </tr>
+                                  <tr>
+                                      <td>before()</td>
+                                      <td>Ajoute le contenu avant l'élément spécifié par le sélecteur.</td>
+                                  </tr>
+                                  <tr>
+                                      <td>after()</td>
+                                      <td>Ajoute le contenu après l'élément spécifié par le sélecteur.</td>
+                                  </tr>
+                                  <tr>
+                                      <td>prepend()</td>
+                                      <td>Ajoute le contenu au début d'un élément spécifié par le sélecteur.</td>
+                                  </tr>
+                                  <tr>
+                                      <td>remove()</td>
+                                      <td>Enlève un élément spécifié par un sélecteur.</td>
+                                  </tr>
+                                  <tr>
+                                      <td>replaceAll()</td>
+                                      <td>Remplace tous les occurrences d'un élément par un autre élément,</td>
+                                  </tr>
+                                  <tr>
+                                      <td>wrap()</td>
+                                      <td>Entour la structure HTML autour de chaque élément spécifié par le sélecteur</td>
+                                  </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                        <p>
+                          Comme on peut le voir, ces fonctions se basent grandement sur le sélecteur pour positionner les nouveaux éléments. Ces nouveaux éléments seront
+                          définis directement dans le code JavaScript plutôt que dans le squelette HTML de la page. Elles permettent d'ailleurs de ne pas créer inutilement des éléments,
+                          <span id="navParcours"></span>
+                          mais de les ajouter uniquement lors de l'événement souhaité.
+                        </p>
+                    </div><!--Fin manipDom-->
+
+                    <div id="traversingMeth" class="methodes">
+                      <h3>
+                        Les méthodes de parcours (Traversing methods)
+                      </h3>
+                      <p>
+                        Ces méthodes permettent majoritairement d'obtenir un élément en lien avec le sélecteur indiqué. Le principe de famille de jQuery devient donc
+                        extrêmement important afin de bien utiliser les méthodes de parcours. Par exemple, on pourrait obtenir les enfants d'un élément grâce à la 
+                        méthode <b>children()</b>. Comme mentionné plus tôt, nous avons donc notre élément sélectionné et toute sa famille qui deviennent accessibles
+                        grâce à ces méthodes. Donc, ses parents, ses enfants, ses frères, ses ancêtres et ses descendants sont maintenant à notre portée.
+                      </p>
+                      <p><button type="button" class="btn btn-outline-primary mb-2" id="afficherTraversing">Afficher toutes les méthodes de parcours</button></p>
+                      <div id="tableTraversing" class="tableSelecteur m-3">
+                        <table>
+                          <tbody>
+                              <tr>
+                                  <th style="width:25%">Méthode</th>
+                                  <th>Description</th>
+                              </tr>
+                              <tr>
+                                  <td>children()</td>
+                                  <td>Obtient tous les enfants de l'élément sélectionné.</td>
+                              </tr>
+                              <tr>
+                                  <td>each()</td>
+                                  <td>Boucle entre tous les éléments.</td>
+                              </tr>
+                              <tr>
+                                  <td>find()</td>
+                                  <td>Trouve tous les enfants de chaque élément spécifié.</td>
+                              </tr>
+                              <tr>
+                                  <td>first()</td>
+                                  <td>Obtient la première occurrence de l'objet spécifié.</td>
+                              </tr>
+                              <tr>
+                                  <td>next()</td>
+                                  <td>Obtient le prochain frère immédiat de l'élément</td>
+                              </tr>
+                              <tr>
+                                  <td>parent()</td>
+                                  <td>Obtient tous les parents de l'élément.</td>
+                              </tr>
+                              <tr>
+                                  <td>prev()</td>
+                                  <td>Obtient son frère immédiat précédant.</td>
+                              </tr>
+                              <tr>
+                                  <td>siblings()</td>
+                                  <td>Obtient tous les frères de l'élément sélectionné.</td>
+                              </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <p>
+                        Une des méthodes très intéressantes est la méthode <b>each()</b>. Puisqu'elle itère à travers les éléments, elle peut être combinée avec les autres
+                        méthodes afin d'appliquer une fonction sur chacun des éléments. Par exemple:
+                      </p>
+                      <span id="navCSS"></span>
+                      <p>
+                        <img src="FafardKevin-fichiersRapport/img/exempleEach.PNG"/>
+                        
+                      </p>
+                    </div><!--Fin traversing-->
+
+                    <div id="methCSS" class="methodes">
+                      <h3>
+                        Les méthodes CSS
+                        <img class="imagesTitre" src="FafardKevin-fichiersRapport/img/css.png"/>
+                      </h3>
+                      <p>
+                        Comme mentionné plus tôt, les sélecteurs jQuery sont fortement basés sur ceux de CSS, donc il est logique que cette libraire nous 
+                        permette de mettre à jour le CSS. En effet, les méthodes CSS permettent de modifier les classes d'un élément, ou directement de lui ajouter
+                        des styles. On peut aussi, entre autres, activer ou désactiver les classes d'un élément.
+                      </p>
+                      <p><button type="button" class="btn btn-outline-primary mb-2" id="afficherMethCSS">Afficher toutes les méthodes CSS</button></p>
+                      <div id="tableCSS" class="tableSelecteur m-3">
+                        <table>
+                          <tbody>
+                              <tr>
+                                  <th style="width:25%">Méthode</th>
+                                  <th>Description</th>
+                              </tr>
+                              <tr>
+                                  <td>css()</td>
+                                  <td>Obtient ou met une propriété de style à l'élément sélectionné.</td>
+                              </tr>
+                              <tr>
+                                  <td>addClass()</td>
+                                  <td>Ajoute une ou plusieurs classes déjà créée à l'élément.</td>
+                              </tr>
+                              <tr>
+                                  <td>hasClass()</td>
+                                  <td>Détermine si un des élément sélectionnés a comme class CSS celle donnée en paramètre.</td>
+                              </tr>
+                              <tr>
+                                  <td>removeClass()</td>
+                                  <td>Retire une ou plusieurs classes des éléments spécifiés.</td>
+                              </tr>
+                              <tr>
+                                  <td>toggleClass()</td>
+                                  <td>Active ou désactive une ou des classes d'un élément.</td>
+                              </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      
+                      <p id="navAttributs"></p>
+                    </div><!--Fin Methodes CSS-->
+
+                    <div id="methAttributs" class="methodes">
+                      <h3>
+                        Les méthodes d'attributs
+                      </h3>
+                      <p>
+                        Grâce aux propriétés de CSS, on peut donner des attributs aux différents éléments DOM de notre page web. Les méthodes d'attributs permettent donc de
+                        modifier les propriétés d'un élément, donc ses attributs, son texte, ou directement son contenu HTML. Elles peuvent aussi compléter les méthodes de
+                        CSS en ajoutant par exemple une classe de style à un élément.<a href="#accordionExample"> On peut voir un exemple plus haut dans la page dans la première
+                        section de l'accordéon.</a>
+                      </p>
+                      <p><button type="button" class="btn btn-outline-primary mb-2" id="afficherMethAtt">Afficher toutes les méthodes d'attributs</button></p>
+                      <div id="tableAtt" class="tableSelecteur m-3">
+                        <table>
+                          <tbody>
+                              <tr>
+                                  <th style="width:25%">Méthode</th>
+                                  <th>Description</th>
+                              </tr>
+                              <tr>
+                                  <td>attr()</td>
+                                  <td>Obtient ou met la valeur de l'attribut spécifié de l'élément.</td>
+                              </tr>
+                              <tr>
+                                  <td>prop()</td>
+                                  <td>Obtient ou met la valeur de la propriété spécifié de l'élément.</td>
+                              </tr>
+                              <tr>
+                                  <td>html()</td>
+                                  <td>Obtient ou met le contenu HTML de l'élément spécifié.</td>
+                              </tr>
+                              <tr>
+                                  <td>text()</td>
+                                  <td>Obtient ou met le texte à jour de l'élément spécifié.</td>
+                              </tr>
+                              <tr>
+                                  <td>val()</td>
+                                  <td>Obtient ou met une valeur d'une des propriétés de l'élément spécifié.</td>
+                              </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <p id="navEvents"></p>
+                    </div><!--Fin methodes attributs-->
+
+                    <div id="methEvents" class="methodes">
+                      <h3>
+                        Les événements
+                      </h3>
+                      <p>
+                        Tout d'abord, qu'est-ce qu'un événement? C'est le concept de lancer une fonction, un bout de code, lorsqu'une action précise est faite par l'utilisateur,
+                        par le navigateur ou par le document. Donc, on peut dire qu'il s'agit du lien entre une action quelconque et d'une portion de code en écoutant continuellement le code. Aussi,
+                        la majorité des événements correspondent à un événement DOM. Par exemple, comme mentionné plus tôt, l'action la plus importante est 
+                        <b>$(document).ready(function(){});</b>. Cet événement est un exemple d'action du document, et non de l'utilisateur. Pour ce qui est des événements 
+                        faits par l'utilisateur, nous avons trois types: <b>Événements d'un formulaire</b>, <b>événements du clavier</b> et <b>événements de la souris</b>. Voici
+                        la liste de tous les événements possibles:
+                      </p>
+                      <ul class="nav nav-tabs" id="myTab" role="tablist">
+                          <li class="nav-item">
+                            <a class="nav-link" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form" aria-selected="false">Événements d'un formulaire</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" id="clavier-tab" data-toggle="tab" href="#clavier" role="tab" aria-controls="clavier" aria-selected="false">Événement de clavier</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" id="souris-tab" data-toggle="tab" href="#souris" role="tab" aria-controls="souris" aria-selected="false">Événement de souris</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" id="navigateur-tab" data-toggle="tab" href="#navigateur" role="tab" aria-controls="navigateur" aria-selected="false">Événement de navigateur</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" id="document-tab" data-toggle="tab" href="#document" role="tab" aria-controls="document" aria-selected="false">Événement de document</a>
+                          </li>
+                      </ul>
+                      <div class="tab-content methodes" id="myTabContent">
+                        <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
+                            <div id="tabForm" class="tableSelecteur m-3">
+                                <table>
+                                  <tbody>
+                                      <tr>
+                                          <th style="width:25%">Méthode jQuery</th>
+                                          <th style="width:25%">Événement DOM</th>
+                                          <th>Description</th>
+                                      </tr>
+                                      <tr>
+                                          <td>blur</td>
+                                          <td>onblur</td>
+                                          <td>Lorsque notre élément perd le focus.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>change</td>
+                                          <td>onchange</td>
+                                          <td>Lorsque la valeur de notre élément change de valeur.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>focus</td>
+                                          <td>onfocus</td>
+                                          <td>Lorsque notre élément obtient le focus.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>focusin</td>
+                                          <td>onfucusin</td>
+                                          <td>Tout juste avant que notre élément obtienne le focus.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>select</td>
+                                          <td>onselect</td>
+                                          <td>Lorsque du texte a été sélectionné dans notre élément.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>submit</td>
+                                          <td>onsubmit</td>
+                                          <td>Lorsqu'un formulaire est soumis.</td>
+                                      </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="clavier" role="tabpanel" aria-labelledby="clavier-tab">
+                            <div id="tabclavier" class="tableSelecteur m-3">
+                                <table>
+                                  <tbody>
+                                      <tr>
+                                          <th style="width:25%">Méthode jQuery</th>
+                                          <th style="width:25%">Événement DOM</th>
+                                          <th>Description</th>
+                                      </tr>
+                                      <tr>
+                                          <td>keydown</td>
+                                          <td>onkeydown</td>
+                                          <td>Lorsqu'un utilisateur est en train d'appuyer sur une touche du clavier.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>keypress</td>
+                                          <td>onkeypress</td>
+                                          <td>Lorsqu'un utilisateur appuie sur une touche du clavier.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>keyup</td>
+                                          <td>onkeyup</td>
+                                          <td>Lorsqu'un utilisateur relâche une touche du clavier.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>focusout</td>
+                                          <td></td>
+                                          <td>Lorsque le focus est perdu.</td>
+                                      </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="souris" role="tabpanel" aria-labelledby="souris-tab">
+                            <div id="tabSouris" class="tableSelecteur m-3">
+                                <table>
+                                  <tbody>
+                                      <tr>
+                                          <th style="width:25%">Méthode jQuery</th>
+                                          <th style="width:25%">Événement DOM</th>
+                                          <th>Description</th>
+                                      </tr>
+                                      <tr>
+                                          <td>click</td>
+                                          <td>onclick</td>
+                                          <td>Lorsque l'utilisateur click sur l'élément.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>dblclick</td>
+                                          <td>ondblclick</td>
+                                          <td>Lorsque l'utilisateur fait un click double sur l'élément.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>focusout</td>
+                                          <td></td>
+                                          <td>Lorsque le focus est perdu.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>hover</td>
+                                          <td></td>
+                                          <td>Lorsque l'utilisateur met son onglet sur l'élément.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>mousedown</td>
+                                          <td>onmousedown</td>
+                                          <td>Lorsque l'utilisateur appuie sur sa souris sur un élément.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>mouseenter</td>
+                                          <td>onmouseenter</td>
+                                          <td>Lorsque l'onglet entre dans l'élément.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>mouseleave</td>
+                                          <td>onmouseleave</td>
+                                          <td>Lorsque l'onglet sort de l'élément.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>mousemove</td>
+                                          <td>onmousemove</td>
+                                          <td>Lorsque l'onglet bouge à l'intérieur de l'élément.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>mouseout</td>
+                                          <td>onmouseout</td>
+                                          <td>Lorsque l'onglet sort de l'élément ou d'un de ses enfants.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>mouseover</td>
+                                          <td>onmouseover</td>
+                                          <td>Lorsque l'onglet entre sur un élément ou un de ses enfants.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>mouseup</td>
+                                          <td>onmouseup</td>
+                                          <td>Lorsque l'usager relâche le bouton de la souris.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>Toggle</td>
+                                          <td></td>
+                                          <td>Sensiblement le même que le click.</td>
+                                      </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="navigateur" role="tabpanel" aria-labelledby="navigateur-tab">
+                            <div id="tabNavigateur" class="tableSelecteur m-3">
+                                <table>
+                                  <tbody>
+                                      <tr>
+                                          <th style="width:25%">Méthode jQuery</th>
+                                          <th style="width:25%">Événement DOM</th>
+                                          <th>Description</th>
+                                      </tr>
+                                      <tr>
+                                          <td>Error</td>
+                                          <td>onerror()</td>
+                                          <td>Lorsqu'une erreur survient.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>Resize</td>
+                                          <td>onresize</td>
+                                          <td>Lorsque la fenêtre est redimensionnée.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>Scroll</td>
+                                          <td>onscroll</td>
+                                          <td>Lorsqu'il y a un scroll.</td>
+                                      </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="document" role="tabpanel" aria-labelledby="document-tab">
+                            <div id="tabDocument" class="tableSelecteur m-3">
+                                <table>
+                                  <tbody>
+                                      <tr>
+                                          <th style="width:25%">Méthode jQuery</th>
+                                          <th style="width:25%">Événement DOM</th>
+                                          <th>Description</th>
+                                      </tr>
+                                      <tr>
+                                          <td>Load</td>
+                                          <td>onload</td>
+                                          <td>Lorsque le document est chargé.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>Ready</td>
+                                          <td></td>
+                                          <td>Lorsque le document est prêt.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>Unload</td>
+                                          <td>onunload</td>
+                                          <td>Lorsque le document est déchargé.</td>
+                                      </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                        </div>
+                      </div>
+                      <p>
+                        Ces méthodes sont extrêmement utilisées de nos jours puisqu'elles permettent d'offrir à l'utilisateur différentes interactions que vous avez pu, vous aussi,
+                        utiliser à travers la lecture de ce document. De plus, chacune des méthodes d'événement possède un callback afin de pouvoir exécuter du code lors du
+                        déclenchement du même événement. Une autre fonction qui ne se trouve pas dans le tableau et qui est probablement une des plus utilisées est la fonction
+                        <b>on()</b>. Elle permet de regrouper différents événements ensemble et de leur donner la même fonction. Elle agit donc un peu comme un listener de différentes
+                        fonctions simultanément. Par exemple, appuyez ou sortez votre souris de la boîte ci-dessous afin de modifier la couleur de celle-ci.
+                      </p>
+                      <div id="exempleOn" class="methodes"></div>
+                      <img src="FafardKevin-fichiersRapport/img/exempleOn.PNG" style="margin-bottom:3%"/>
+                      <p>
+                        On voit plusieurs concepts déjà expliqués grâce à cet exemple. On peut voir l'utilisation de la méthode <b>on()</b> qui nous permet de relié deux événements
+                        à la même fonction, le callback de tous les événements de jQuery afin de créer notre fonction, l'utilisation du <b>$(this)</b> à l'intérieur de la fonction 
+                        afin de sélectionner l'élément en cours et la modification temporaire du CSS de l'élément sélectionné grâce à la méthode <b>css()</b>. La fonction on() est
+                        <span id="navAnimations"></span>
+                        contrebalancée par la fonction off() qui vient, quant à elle, retirer les listener d'un élément.
+                      </p>
+                    </div><!--Fin methodes events-->
+
+                    <div id="methAnimations" class="methodes">
+                      <h3>
+                        Les animations
+                      </h3>
+                      <p id="panimations">
+                        Les méthodes d'animations sont utilisées afin de mettre des effets spéciaux sur des éléments DOM. Elles permettent de rendre le site plus dynamique
+                        et plus agréable à consulter par des utilisateurs en offrant des animations moins brusques. La méthode la plus utilisée est définitivement
+                        <b>$(#monID).animate()</b> qui prends comme paramètre un objet JSON définissant les styles CSS à appliquer, le temps d'exécution pour compléter
+                        l'animation, le "easing" (la façon dont l'animation progresse) et le callback. Par exemple, appuyez sur le texte afin de l'animer et de changer
+                        sa dimension.
+                      </p>
+                      <img src="FafardKevin-fichiersRapport/img/exempleAnimation.PNG" class="methodes"/>
+                      <p id="navDimensions"></p>
+                    </div><!--Fin methodesAnimations-->
+
+                    <div id="methDimensions" class="methodes">
+                      <h3>
+                        Les manipulations de dimensions
+                      </h3>
+                      <p>
+                        Les méthodes de manipulations de dimensions permettent d'obtenir ou de modifier la forme d'un élément sans directement changer son code HTML
+                        ou CSS. Par exemple, on peut facilement obtenir la hauteur et la largeur d'un élément grâce aux fonctions <b>height()</b> et <b>width()</b>.
+                      </p>
+                      <p><button type="button" class="btn btn-outline-primary mb-2" id="afficherDimensions">Afficher toutes les méthodes de manipulations de dimensions</button></p>
+                        <div id="tableMDimensions" class="tableSelecteur m-3">
+                            <table>
+                              <tbody>
+                                  <tr>
+                                      <th style="width:25%">Méthode</th>
+                                      <th>Description</th>
+                                  </tr>
+                                  <tr>
+                                      <td>height()</td>
+                                      <td>Obtient ou met à jour la hauteur de l'élément.</td>
+                                  </tr>
+                                  <tr>
+                                      <td>innerHeight()</td>
+                                      <td>Obtient ou met à jour la hauteur intérieur de l'élément (sa hauteur + son padding).</td>
+                                  </tr>
+                                  <tr>
+                                      <td>outerHeight()</td>
+                                      <td>Obtient ou met à jour la hauteur extérieur de l'élément (sa bordure + son padding + sa hauteur).</td>
+                                  </tr>
+                                  <tr>
+                                      <td>offset()</td>
+                                      <td>Obtient ou met à jour les coordonnées à partir de la gauche et du haut de l'élément.</td>
+                                  </tr>
+                                  <tr>
+                                      <td>position()</td>
+                                      <td>Obtient les coordonnées de l'élément.</td>
+                                  </tr>
+                                  <tr>
+                                      <td>width()</td>
+                                      <td>Obtient ou met à jour la largeur de l'élément.</td>
+                                  </tr>
+                                  <tr>
+                                      <td>innerWidth()</td>
+                                      <td>Obtient ou met à jour la largeur intérieur de l'élément (son padding + sa largeur).</td>
+                                  </tr>
+                                  <tr>
+                                      <td>outerWidth()</td>
+                                      <td>Obtient ou met à jour la largeur extérieur de l'élément (sa bordure, son padding et sa largeur).</td>
+                                  </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                        <p id="navAjax"></p>
+                    </div><!--Fin meth dimensions-->
+
+                    <div id="reqAjax" class="methodes">
+                      <h3>
+                        Les requêtes Ajax  
+                      <img class="imagesTitre" src="FafardKevin-fichiersRapport/img/ajax.png" style="margin-bottom: 8px;"/>
+                      </h3>
+                      <p>
+                        Les requêtes Ajax permettent de communiquer de manière asynchrone avec un serveur afin de, généralement, obtenir de l'information ou de lui en envoyer.
+                        Contrairement aux autres actions, il n'y a pas nécessairement de sélecteur lors de ces actions. En effet, la formule ressemble davantage à
+                        <b>$.ajax();</b>. <a href="#headingThree">On retrouve un exemple dans la troisième section de l'accordéon du début.</a> Une requête Ajax 
+                        peut prendre énormément de paramètres, mais les plus communs sont:
+                      </p>
+                      <div id="tableAjax" class="tableSelecteur m-3">
+                          <table>
+                            <tbody>
+                                <tr>
+                                    <th style="width:25%">Paramètre</th>
+                                    <th>Description</th>
+                                </tr>
+                                <tr>
+                                    <td>url</td>
+                                    <td>Donne le lien URL vers lequel la requête sera envoyée.</td>
+                                </tr>
+                                <tr>
+                                    <td>method</td>
+                                    <td>La méthode HTTP qui sera utilisée pour effectuer la requête.</td>
+                                </tr>
+                                <tr>
+                                    <td>dataType</td>
+                                    <td>Le type de donnée que nous nous attendons de recevoir (xml, json, script ou html).</td>
+                                </tr>
+                                <tr>
+                                    <td>data</td>
+                                    <td>Les données qui seront envoyées selon la méthode indiquée.</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                      </div>
+                      <p>
+                       Après avoir mis en place notre requête, on peut définir les actions qui seront portées selon ce qui est retourné par le serveur. Habituellement,
+                       nous allons vouloir avoir du code lorsque la requête est terminée, lorsqu'elle échoue et en tout temps afin d'être au courant si celle-ci n'a  
+                       pu être accompli ou bien si elle a réussi. Par exemple:
+                      </p>
+                      <img src="FafardKevin-fichiersRapport/img/exempleAjax2.PNG"/>
+                      <p id="navStage"></p>
+                    </div><!--fin meth ajax-->
+                </div><!--Fin div lesMethodes-->
+
+                <div id="durantStage" class="marginsTopBot">
+                  <h1>
+                    Utilisation durant mon stage
+                  </h1>
+                  <p>
+                    Au cours de mon stage, j'ai eu la chance de perfectionner et d'apprendre en profondeur tout ce que jQuery avait à offrir. Nous n'étions pas obligés de l'utiliser,
+                    mais j'ai fait le choix de m'accorder du temps pour l'apprendre afin de simplifier différentes tâches que nous devions accomplir. Cependant, nous devions
+                    absolument maîtriser les <b>requêtes Ajax</b> puisque c'était le moyen de communication avec le serveur qu'Hydro-Québec avait choisi. Donc, à travers nos différentes
+                    applications, nous avions vraiment beaucoup de ces requêtes avec lesquelles je n'étais vraiment pas à l'aise au départ. Par exemple, pour l'application 
+                    Horaire De Travail (HDT), nous devions charger une liste de tous les horaires déjà créés puis les ajouter à notre page. Dans l'exemple suivant, nous effectuons
+                    une requête Ajax de type <b>GET</b>, et non POST, et les données retournées seront en HTML. <a href="#ajax2">Vous pouvez consulter un autre exemple de requête
+                      ajax utilisée dans mon stage dans les exemples qui suiveront.
+                    </a>
+                  </p>
+                  <img src="FafardKevin-fichiersRapport/img/exempleAjaxStage.PNG" />
+                  <p>
+                    On voit bien la requête effectuée au module HDT, au contrôleur administration et à la méthode actionChargerListeHoraires qui reçoit en paramètre l'équipe
+                    dont nous cherchons les horaires. Lorsque la requête est terminée, on reçoit dans le format souhaité (HTML) la liste des employés, que nous attachons ensuite 
+                    à notre variable JavaScript. Si la requête échoue, on affiche un message grâce à une autre libraire.
+                  </p>
+                  <br /><br />
+                  <p>
+                    Pour les méthodes qui m'ont grandement aidées durant mon stage, la méthode <b>data()</b> nous a permise de trouver l'information que nous cherchions
+                    rapidement dans l'horaire. En envoyant en paramètre l'attribut que nous voulions, nous pouvions obtenir rapidement les données sans devoirs faire de requête 
+                    au serveur. Encore dans l'Horaire De Travail, en créant les balises div qui allait représenter chaque jour, nous mettions le numéro de l'horaire et le libellé
+                    de la plage courante que nous pouvions ensuite aller rechercher grâce à jQuery ainsi:
+                  </p>
+                  <img src="FafardKevin-fichiersRapport/img/stageAttribut.PNG" />
+                  <p>
+                    Grâce à ces deux petites lignes de codes, nous avions dans des variables JavaScript toute l'information nécessaire sans devoirs faire de requêtes, rendant notre
+                    application beaucoup moins lourde autant pour le serveur que pour le client. On voit que nous envoyons en paramètre à la méthode les attributs qui nous intéresse.
+                    Si nous avions voulu attribué une valeur à l'attribut plutôt que de l'obtenir, nous aurions dû inverser l'égalité.
+                  </p>
+                  <br /><br />
+                  <p>
+                    Pour ce qui est des autres méthodes qui m'ont servi, bien sûr que les méthodes d'événements m'ont aidé. La fonction <b>click()</b> est venue ajouter de l'interaction
+                    à mes applications, rendant le tout plus intuitif et plus communicateur pour mon client. Par exemple, dans mon second projet Liste De Changement (LDC), nous
+                    avions un bouton qui permettait de mettre à jour la page au complet. Afin d'indiquer au client que la page chargeait, nous avions une fonction suite à son
+                    click.
+                  </p>
+                  <img src="FafardKevin-fichiersRapport/img/stageClick.PNG" />
+                  <p>Dans cet exemple, la méthode <b>click()</b> reçoit en paramètre la fonction que nous désirons utiliser lors de l'appuie du bouton par l'usager. On voit également des
+                    méthodes CSS permettant de modifier les classes de notre élément. Ces méthodes seront présentées dans l'exemple suivant.
+                  </p>
+                  <br /><br />
+                  <p>
+                    Comme on le voit dans l'exemple précédent, <b>les méthodes CSS</b> ont grandement servi aussi. Autant dans HDT que dans LDC, nous modifions continuellement les
+                    classes attribuées aux éléments, ou directement leurs styles. Dans Horaire De Travail, nous l'utilisions entre autres lorsque la cellule de la journée 
+                    changeait, par exemple si l'on ajoutait un congé sur la cellule et qu'elle devait maintenant être d'une nouvelle couleur, au lieu de tout recharger l'horaire,
+                    on ajoutait une classe temporairement pour rendre la cellule de la bonne couleur. Dans Liste De Changement, on l'utilisait pour mettre une image de chargement 
+                    sur les grilles. Ces classes ajoutaient un gif de chargement et diminuaientt l'opacité de la grille.
+                  </p>
+                  <img src="FafardKevin-fichiersRapport/img/stageCSS.PNG" />
+                  <p>
+                    On voit en même temps que, comme mentionné plus tôt, on peut enchaîner les actions. J'aurais pu également enlever les deux classes d'un seul coup. Ces méthodes
+                    viennent donc agir du côté du client et nous on permit de rendre l'application plus parlante. On peut 
+                    également observer que ces méthodes prennent en paramètre les classes que nous désirons ajouter à l'élément.
+                  </p>
+                  <br /><br />
+                  <p>
+                    De plus, nous avons aussi utilisé les méthodes <b>mouseover()</b> et <b>mouseout()</b> afin de créer nos tooltips et nos popups de façon autonome. En effet, 
+                    lorsque nous passions notre souris sur un des éléments DOM, nous affichions notre fenêtre, et en sortant nous la cachions. Notre fonction pour afficher le popup
+                    était donc enclenchée lorsque la souris passait sur l'élément, et la fonction pour la cacher était déclenchée lorsque la souris sortait.
+                  </p>
+                  <img src="FafardKevin-fichiersRapport/img/stagePopup.PNG" />
+                  <p>
+                    On voit encore une fois qu'on peut enchaîner les actions les unes après les autres et qu'on n'est pas obligé d'utiliser l'élément DOM sélectionné. On voit également
+                    que cette méthode retourne un paramètre qui contient les données de l'événements, même si dans notre cas, il n'est pas utilisé.
+                  </p>
+                  <br /><br />
+                  <p>
+                    Aussi, dans HDT, nous avions souvent besoin de modifier la cellule comme vous avez pu le comprendre. Il y avait des cas dans lequel non seulement la couleur 
+                    changeait comme vu plus tôt, mais aussi le texte changeait. Dans ces cas, <b>les méthodes de manipulations DOM</b> nous étaient vraiment utiles. Par exemple, nous
+                    devions changer le libellé de la case en fonction du nombre d'heures de vacance accordé. Un nombre d'heures de vacance égal au nombre d'heures travaillé remplaçait 
+                    complètement le texte alors qu'un congé partiel devait afficher le libellé de base avec '*'.
+                  </p>
+                  <img src="FafardKevin-fichiersRapport/img/stage5.PNG" />
+                  <p>
+                    Les différents sélecteurs nous ont donc grandement aidés comme vous pouvez le constater. Dans notre cas, on allait chercher l'enfant de notre cellule qui contenait
+                     lui le texte que nous désirions changer. Pour modifier la cellule, nous devions lui passer en paramètre le nouveau contenu. Si nous avions voulu obtenir la valeur
+                     courante du texte par exemple, il aurait fallu appeler uniquement <b>.text()</b>, et non envoyer un paramètre en plus.
+                  </p>
+                  <br /><br />
+                  <p>
+                    Ensuite, dans LDI, nous avons utilisé une des méthodes essentiels à jQuery: <b>each()</b>. Elle nous permettait de naviguer entre tous les éléments sélectionnés.
+                    La fonction retourne en paramètre l'index de l'élément et l'élément lui-même. Cette méthode de parcours nous permettait d'éviter le surplus de code ou de créer un id
+                    différent pour chacun de nos éléments. Nous avons également utilisé la méthode <b>prop()</b> qui, dans notre cas présent, reçoit en paramètre la propriété que nous
+                    cherchons. De plus, nous effectuons <b>une requête Ajax</b> de type <b>POST</b> cette fois-ci, et non GET. On le remarque grâce à l'attribut <em>data</em> qui est défini ainsi
+                    que grâce à l'attribut <em>method</em> qui est POST. On reçoit en retour des données sous format JSON.
+                  </p>
+                  <img src="FafardKevin-fichiersRapport/img/ldi1.png" id="ajax2"/>
+                  <p>
+                    Dans cette exemple, on allait chercher chaque élément qui avait comme classe <b>unCheckbox</b> qui servait a défénir nos cases à cocher. Grâce à notre méthode
+                    <b>each()</b>, nous iterions entre tous nos cases afin de former un objet. Grâce à la méthode <b>prop()</b> à laquelle nous passons la propriété <b>checked</b>, nous
+                    pouvons déterminer si notre élément courant, une des nombreuses cases à cocher, est cochée. Cette exemple démontre aussi qu'il est simple et efficace d'utiliser
+                    plusieurs méthodes jQuery dans une même méthode puisqu'ici, nous utilisons une méthode de parcours, une méthode d'attribut et une requête Ajax.
+                  </p>
+                </div><!--Fin durante stage-->
+
+                <div id="projetsStage">
+                  <h1>
+                    Mes projets
+                    
+                    <img class="imagesTitre" src="FafardKevin-fichiersRapport/img/favicon.ico"/>
+                  </h1>
+                  <br />
+
+                  <div id="projHDT">
+                    <h3 id="titreHDT">
+                      L'horaire de travail
+                    </h3>
+                    <p style="text-align: center">
+                      J'ai travaillé sur ce projet pour environ 10 semaines. L'application gère les horaires, les congés, le temps supplémentaire et bien d'autres
+                      options. <b>Vous pouvez appuyer sur les images afin de les agrandir</b>.
+                    </p>
+                    <div id="carousselHDT" class="fitInPage">
+                      <div id="lecarousselHDT" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="FafardKevin-fichiersRapport/img/hdt1.PNG" class="d-block w-100" alt="hdt1" data-toggle="modal" data-target="#modalHdt1">
+                          </div>
+                          <div class="carousel-item ">
+                            <img src="FafardKevin-fichiersRapport/img/hdt2.PNG" class="d-block w-100" alt="hdt2" data-toggle="modal" data-target="#modalHdt2">
+                          </div>
+                          <div class="carousel-item ">
+                            <img src="FafardKevin-fichiersRapport/img/hdt3.PNG" class="d-block w-100" alt="hdt3" data-toggle="modal" data-target="#modalHdt3">
+                          </div>
+                          <div class="carousel-item ">
+                            <img src="FafardKevin-fichiersRapport/img/hdt4.PNG" class="d-block w-100" alt="hdt4" data-toggle="modal" data-target="#modalHdt4">
+                          </div>
+                        </div>
+                        <i class="fas fa-chevron-circle-left" id="hdtPrev" style="cursor:pointer"></i>
+                        <i class="fas fa-chevron-circle-right" id="hdtNext" style="cursor:pointer"></i>
+                      </div>
+                    </div>
+                  </div><!--fin proj HDT-->
+
+                  <div id="modalHDT">
+
+                    <div class="modal fade" id="modalHdt1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered mesModals pleineHauteur" role="document">
+                          <div class="modal-content pleineHauteur">
+                            <div class="modal-body">
+                                <div class="alert alert-light" role="alert">
+                                    Appuyez sur la touche "escape" pour sortir
+                                </div>
+                              <img src="FafardKevin-fichiersRapport/img/hdt1.PNG" class="d-block w-100" alt="hdt1">
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="modalHdt2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered mesModals pleineHauteur" role="document">
+                              <div class="modal-content pleineHauteur">
+                                <div class="modal-body">
+                                    <div class="alert alert-light" role="alert">
+                                        Appuyez sur la touche "escape" pour sortir
+                                    </div>
+                                    <img src="FafardKevin-fichiersRapport/img/hdt2.PNG" class="d-block w-100" alt="hdt2">
+                                </div>
+                              </div>
+                            </div>
+                    </div>
+
+                    <div class="modal fade" id="modalHdt3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered mesModals pleineHauteur" role="document">
+                                <div class="modal-content pleineHauteur">
+                                  <div class="modal-body">
+                                      <div class="alert alert-light" role="alert">
+                                          Appuyez sur la touche "escape" pour sortir
+                                      </div>
+                                      <img src="FafardKevin-fichiersRapport/img/hdt3.PNG" class="d-block w-100" alt="hdt3">
+                                  </div>
+                                </div>
+                              </div>
+                    </div>
+                    
+                    <div class="modal fade" id="modalHdt4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-dialog-centered mesModals pleineHauteur" role="document">
+                                  <div class="modal-content pleineHauteur">
+                                    <div class="modal-body">
+                                        <div class="alert alert-light" role="alert">
+                                            Appuyez sur la touche "escape" pour sortir
+                                        </div>
+                                        <img src="FafardKevin-fichiersRapport/img/hdt4.PNG" class="d-block w-100" alt="hdt4">
+                                    </div>
+                                  </div>
+                                </div>
+                    </div>
+
+                  </div><!--fin modal hdt-->
+
+                  <div id="projLDC" style="margin-top:4%; margin-bottom:4%">
+                      <h3 id="titreLDC">
+                        Liste des Changements
+                      </h3>
+                      <p>
+                        Ce projet a été beaucoup plus court. J'ai travaillé sur ce projet pour environ 3 semaines. Il permet aux employés de soutien de consulter tous les changements
+                        sur les bases de données ou le matériel. <b>Vous pouvez appuyer sur les images afin de les agrandir</b>.
+                      </p>
+                      <div id="carousselLDC" class="fitInPage">
+                        <div id="lecarousselLDC" class="carousel slide" data-ride="carousel">
+                          <div class="carousel-inner" >
+                            <div class="carousel-item active" >
+                              <img id="ldc1" src="FafardKevin-fichiersRapport/img/ldc1.PNG" class="d-block w-100" alt="ldc1" data-toggle="modal" data-target="#modalLdc1">
+                            </div>
+                            <div class="carousel-item ">
+                              <img src="FafardKevin-fichiersRapport/img/ldc2.PNG" class="d-block w-100" alt="ldc2" data-toggle="modal" data-target="#modalLdc2">
+                            </div>
+                            <div class="carousel-item ">
+                              <img src="FafardKevin-fichiersRapport/img/ldc3.PNG" class="d-block w-100" alt="ldc3" data-toggle="modal" data-target="#modalLdc3">
+                            </div>
+                          </div>
+                          <i class="fas fa-chevron-circle-left" id="ldcPrev" style="cursor:pointer"></i>
+                          <i class="fas fa-chevron-circle-right" id="ldcNext" style="cursor:pointer"></i>
+                        </div>
+                      </div>
+                  </div><!--fin proj ldc-->
+
+                  <div id="modalLDC">
+
+                    <div class="modal fade" id="modalLdc1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered mesModals pleineHauteur" role="document">
+                          <div class="modal-content pleineHauteur">
+                            <div class="modal-body">
+                              <div class="alert alert-light" role="alert">
+                                  Appuyez sur la touche "escape" pour sortir
+                              </div>
+                              <img src="FafardKevin-fichiersRapport/img/ldc1.PNG" class="d-block w-100" alt="ldc1">
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="modalLdc2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered mesModals pleineHauteur" role="document">
+                              <div class="modal-content pleineHauteur">
+                                <div class="modal-body">
+                                    <div class="alert alert-light" role="alert">
+                                      Appuyez sur la touche "escape" pour sortir
+                                    </div>
+                                    <img src="FafardKevin-fichiersRapport/img/ldc2.PNG" class="d-block w-100" alt="ldc2">
+                                </div>
+                              </div>
+                            </div>
+                    </div>
+
+                    <div class="modal fade" id="modalLdc3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered mesModals pleineHauteur" role="document">
+                                <div class="modal-content pleineHauteur">
+                                  <div class="modal-body">
+                                      <div class="alert alert-light" role="alert">
+                                          Appuyez sur la touche "escape" pour sortir
+                                      </div>
+                                      <img src="FafardKevin-fichiersRapport/img/ldc3.PNG" class="d-block w-100" alt="ldc3">
+                                  </div>
+                                </div>
+                              </div>
+                    </div>
+
+                  </div><!--fin modal LDC-->
+
+                  <div id="projLDI">
+                    <h3 id="titreLDI">Liste des Incidents</h3>
+                    <p>
+                      Ce projet a également été très court et n'a duré que 2 semaines. Il permet, un peu comme LDC, de consulter une grille contenant tous les 
+                      incidents du département TransÉnergie. <b>Vous pouvez appuyer sur les images afin de les agrandir</b>.
+                    </p>
+                    <div id="carousselLDI" class="fitInPage">
+                      <div id="lecarousselLDI" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner" >
+                          <div class="carousel-item active" >
+                            <img id="ldc1" src="FafardKevin-fichiersRapport/img/ldi3.PNG" class="d-block w-100" alt="ldi3" data-toggle="modal" data-target="#modalLdi3">
+                          </div>
+                          <div class="carousel-item ">
+                            <img src="FafardKevin-fichiersRapport/img/ldi2.PNG" class="d-block w-100" alt="ldi2" data-toggle="modal" data-target="#modalLdi2">
+                          </div>
+                        </div>
+                        <i class="fas fa-chevron-circle-left" id="ldiPrev" style="cursor:pointer"></i>
+                        <i class="fas fa-chevron-circle-right" id="ldiNext" style="cursor:pointer"></i>
+                      </div>
+                    </div>
+                  </div><!--fin proj ldi-->
+
+                  <div id="modalLDI">
+
+                    <div class="modal fade" id="modalLdi2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered mesModals pleineHauteur" role="document">
+                          <div class="modal-content pleineHauteur">
+                            <div class="modal-body">
+                              <div class="alert alert-light" role="alert">
+                                  Appuyez sur la touche "escape" pour sortir
+                              </div>
+                              <img src="FafardKevin-fichiersRapport/img/ldi2.PNG" class="d-block w-100" alt="ldi2">
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="modalLdi3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered mesModals pleineHauteur" role="document">
+                              <div class="modal-content pleineHauteur">
+                                <div class="modal-body">
+                                    <div class="alert alert-light" role="alert">
+                                      Appuyez sur la touche "escape" pour sortir
+                                    </div>
+                                    <img src="FafardKevin-fichiersRapport/img/ldi3.PNG" class="d-block w-100" alt="ldi3">
+                                </div>
+                              </div>
+                            </div>
+                    </div>
+
+                  </div><!--fin modals ldi-->
+
+                    
+                </div><!--fin projets stage-->
+                
+                <div id="conclu" style="margin-top: 4%">
+                  <h1>
+                    Conclusion
+                  </h1>
+                  <p>
+                    En conclusion, la libraire jQuery est un outil très puissant qui vient simplifier notre structure HTML et qui concorde extrêmement bien avec JavaScript. Bien qu'il 
+                    ne nous était pas nécessaire d'utiliser et d'apprendre cette libraire, j'ai beaucoup appris et eu de plaisir à évoluer avec celle-ci et apprendre et découvrir 
+                    ses nombreuses fonctions. Cette libraire m'a continuellement été utile au travers de mes deux projets. Je tiens aussi à remercier Gabriel Blais, Patrick Deschênes,
+                    Guillaume Dépelteau, Éric Mainville, les autres stagiaires, l'équipe de CO ainsi que tous les membres d'Hydro-Québec qui ont pris le temps de nous accueillir, 
+                    mais aussi de s'intéresser à nos différents projets. J'ai grandi et appris comme je ne croyais jamais et ma passion pour la programmation est définitivement présente.
+                    Merci aussi à mon superviseur de stage Louis Bouchard qui a été en contact tout au long du projet immense qu'est le stage.
+                  </p>
+                </div> <!--Fin div conlcu-->
+            </div>
+
+            <footer>
+              <i class="fas fa-copyright"></i> Site fait entièrement par Kevin Fafard - 2019 <br />
+              <a href="https://api.jquery.com/" target="_blank">Documentation jQuery</a><br />
+              <a href="http://www.hydroquebec.com/a-propos/" target="_blank">Hydro-Québec</a>
+            </footer>
+    </body>
+</html>
+
+<!--
+  Syntax
+  Selecteur
+  Action
+  Evenement
+  Animation
+  <img src="FafardKevin-fichiersRapport/img/jqueryDocReady.PNG"/>
+-->
+<!--
+<div id="#idParent">
+  <div id="#notreElement">
+    <p id="#idEnfant">
+    </p>
+  </div>
+  <img id="idFrere" />
+</div>
+-->
